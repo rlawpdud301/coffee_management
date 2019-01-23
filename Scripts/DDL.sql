@@ -22,9 +22,9 @@ ALTER TABLE coffee_management.product
 CREATE TABLE coffee_management.sale (
 	no         INT(11) NOT NULL COMMENT '번호', -- 번호
 	code       CHAR(4) NULL     COMMENT '제품코드', -- 제품코드
-	price      INT(11) NOT NULL COMMENT '제품단가', -- 제품단가
-	saleCnt    INT(11) NOT NULL COMMENT '판매수량', -- 판매수량
-	marginRate INT(11) NOT NULL COMMENT '마진율' -- 마진율
+	price      INT(8) NOT NULL COMMENT '제품단가', -- 제품단가
+	saleCnt    INT(8) NOT NULL COMMENT '판매수량', -- 판매수량
+	marginRate INT(2) NOT NULL COMMENT '마진율' -- 마진율
 )
 COMMENT '판매';
 

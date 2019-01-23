@@ -41,6 +41,8 @@ public class SaleMapperTest extends AbstractTest {
 		test01SelectSaleByAll();
 	}*/
 	
+	
+	//판매금액 순위
 	@Test
 	public void test03SelectSaleRankTrue() throws SQLException {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
@@ -53,6 +55,7 @@ public class SaleMapperTest extends AbstractTest {
 		Assert.assertNotNull(list);
 	}
 	
+	//마진액 순위
 	@Test
 	public void test04SelectSaleRankFalse() throws SQLException {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
