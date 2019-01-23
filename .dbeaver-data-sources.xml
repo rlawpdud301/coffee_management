@@ -3,5 +3,8 @@
 	<data-source id="mysql5-16879ce1513-154276775153d0b" provider="mysql" driver="mysql5" name="MySQL - coffee_management" save-password="true" show-system-objects="true" show-util-objects="true" read-only="false">
 		<connection host="localhost" port="3306" server="" database="coffee_management" url="jdbc:mysql://localhost:3306/coffee_management" user="root" password="AQsJNFNMSwJl8w==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev"/>
 	</data-source>
+	<data-source id="mysql5-1687aaa9a7a-10b0f1b0e49582b9" provider="mysql" driver="mysql5" name="MySQL - mysql" save-password="true" show-system-objects="true" show-util-objects="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="mysql" url="jdbc:mysql://localhost:3306/mysql" user="root" password="AQsJNFNMSwJl8w==" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev"/>
+	</data-source>
 	<filters/>
 </data-sources>

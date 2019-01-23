@@ -6,4 +6,5 @@ insert into product values
 
 insert into sale (code, price, saleCnt, marginRate) values
 ('A001', 4500, 150, 10), ('A002', 3800, 140, 15),
-('B001', 5200, 250, 12), ('B002', 4300, 110, 11);
+('B001', 5200, 250, 12), ('B002', 4300, 110, 11),
+('B004', 5000, 150, 20);

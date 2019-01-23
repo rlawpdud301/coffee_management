@@ -1,24 +1,25 @@
-drop database if exists coffee_management;
-create database coffee_management;
+-- coffee_management
+DROP SCHEMA IF EXISTS coffee_management;
 
-use coffee_management;
+-- coffee_management
+CREATE SCHEMA coffee_management;
 
 -- 제품
-CREATE TABLE product (
+CREATE TABLE coffee_management.product (
 	code CHAR(4)     NOT NULL COMMENT '제품코드', -- 제품코드
 	name VARCHAR(20) NOT NULL COMMENT '제품명' -- 제품명
 )
 COMMENT '제품';
 
 -- 제품
-ALTER TABLE product
+ALTER TABLE coffee_management.product
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			code -- 제품코드
 		);
 
 -- 판매
-CREATE TABLE sale (
+CREATE TABLE coffee_management.sale (
 	no         INT(11) NOT NULL COMMENT '번호', -- 번호
 	code       CHAR(4) NULL     COMMENT '제품코드', -- 제품코드
 	price      INT(11) NOT NULL COMMENT '제품단가', -- 제품단가
@@ -28,20 +29,20 @@ CREATE TABLE sale (
 COMMENT '판매';
 
 -- 판매
-ALTER TABLE sale
+ALTER TABLE coffee_management.sale
 	ADD CONSTRAINT
 		PRIMARY KEY (
 			no -- 번호
 		);
 
-ALTER TABLE sale
+ALTER TABLE coffee_management.sale
 	MODIFY COLUMN no INT(11) NOT NULL AUTO_INCREMENT COMMENT '번호';
 
-ALTER TABLE sale
+ALTER TABLE coffee_management.sale
 	AUTO_INCREMENT = 1;
 
 -- 판매
-ALTER TABLE sale
+ALTER TABLE coffee_management.sale
 	ADD CONSTRAINT FK_product_TO_sale -- FK_product_TO_sale
 		FOREIGN KEY (
 			code -- 제품코드
