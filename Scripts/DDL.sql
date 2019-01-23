@@ -55,3 +55,21 @@ ALTER TABLE coffee_management.sale
 	ADD INDEX FK_product_TO_sale (
 		code -- 제품코드
 	);
+	
+-- 순위 구하는 프로시저
+DROP PROCEDURE IF EXISTS coffee_management.price_rank;
+
+DELIMITER $$
+$$
+CREATE definer=root@localhost PROCEDURE coffee_management.price_rank(in isSale boolean)
+begin
+	set @rank := 0, @price := 0;
+
+	select *, greatest(@rank := if(@price = if(isSale, salePrice, marginPrice), @rank, @rank + 1), least(0, @price := if(isSale, salePrice, marginPrice))) as 순위
+	from (select product.code, name, no, price, saleCnt, marginRate, (@salePrice := saleCnt * price) as salePrice,
+		ceiling( @addTax := (@salePrice / 11) ) as addTax,
+		ceiling( @supplyTax := (@salePrice - @addTax) ) as supplyTax,
+		round(@supplyTax * marginRate / 100) as marginPrice from product join sale on product.code = sale.code) t
+		order by if(isSale, salePrice, marginPrice) desc;
+END$$
+DELIMITER ;
