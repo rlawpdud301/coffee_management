@@ -25,7 +25,7 @@
 		insert into sale (code, price, saleCnt, marginRate) values (#{product.code}, #{price}, #{saleCnt}, #{marginRate});	
 	</insert>
 
-	<select id="selectSaleRank" resultType="Sale" statementType="CALLABLE" parameterType="hashmap">
+	<select id="selectSaleRank" resultMap="resultSale" statementType="CALLABLE" parameterType="hashmap">
 		{call price_rank(#{isSale, mode=IN, jdbcType=CHAR})}
 	</select>
 </mapper>

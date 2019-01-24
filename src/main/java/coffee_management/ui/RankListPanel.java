@@ -81,12 +81,12 @@ public class RankListPanel extends JPanel {
 	private Object[][] getDatas() {
 		// TODO Auto-generated method stub
 		// 2차원 배열 만들기
-		Object[][] datas = new Object[list.size()][];
+		Object[][] datas = new Object[list.size() + 1][];
 		
 		for(int i = 0 ; i < list.size() ; i++) {
 			datas[i] = getSaleRow(list.get(i));
 		}
-//		datas[list.size()] = getTotal();
+		datas[list.size()] = getTotal();
 		return datas;
 	}
 
@@ -114,10 +114,10 @@ public class RankListPanel extends JPanel {
 		// TODO Auto-generated method stub
 
 		return new Object[] {
-				sale
-				/*sale.getNo(), sale.getProduct().getCode(), sale.getProduct().getName(), sale.getSaleCnt(),
-				sale.getDetail().getSupplyTax(), sale.getDetail().getAddTax(), sale.getDetail().getSalePrice(),
-				sale.getMarginRate(), sale.getDetail().getMarginPrice()*/
+				sale.getDetail().getRank(), sale.getProduct().getCode(), sale.getProduct().getName(),
+				String.format("%,d", sale.getPrice()), sale.getSaleCnt(), String.format("%,d", sale.getDetail().getSupplyTax()),
+				String.format("%,d", sale.getDetail().getAddTax()), String.format("%,d", sale.getDetail().getSalePrice()), sale.getMarginRate(),
+				String.format("%,d", sale.getDetail().getMarginPrice())
 		};
 	}
 	

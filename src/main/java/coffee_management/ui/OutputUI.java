@@ -37,7 +37,7 @@ public class OutputUI extends JFrame {
 
 	private void initComponents() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 650, 260);
+		setBounds(100, 100, 800, 250);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -65,7 +65,7 @@ public class OutputUI extends JFrame {
 		JLabel lblTitle = new JLabel(isSale ? "판매금액 순위" : "마진액 순위");
 		pTitle.add(lblTitle);
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitle.setFont(new Font("맑은 고딕", Font.BOLD, 30));
+		lblTitle.setFont(new Font("맑은 고딕", Font.BOLD, 24));
 	}
 
 }
