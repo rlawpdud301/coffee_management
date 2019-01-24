@@ -10,6 +10,5 @@ public interface ProductMapper {
 	List<Product> selectProductByAll() throws SQLException;
 	
 	Product selectProductByCode(Product product) throws SQLException;
-	
-	Product getProduct(ResultSet rs) throws SQLException;
+
 }

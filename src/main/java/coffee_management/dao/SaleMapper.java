@@ -12,8 +12,5 @@ public interface SaleMapper {
 	int insertSale(Sale sale) throws SQLException;
 	
 	List<Sale> selectSaleRank(boolean isSale) throws SQLException;
-	
-	Sale getSale(ResultSet rs) throws SQLException;
-	
-	Sale getSaleDetail(ResultSet rs) throws SQLException;
+
 }

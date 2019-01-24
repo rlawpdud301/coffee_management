@@ -34,13 +34,5 @@ public class ProductMapperImpl implements ProductMapper {
 			return sqlSession.selectOne(namespace + ".selectProductByCode", product);
 		}
 	}
-
-	@Override
-	public Product getProduct(ResultSet rs) throws SQLException {
-		String code = rs.getString("code");
-		String name = rs.getString("name");
-		
-		return new Product(code, name);
-	}
 	
 }

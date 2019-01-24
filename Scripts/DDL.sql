@@ -65,7 +65,7 @@ CREATE definer=root@localhost PROCEDURE coffee_management.price_rank(in isSale b
 begin
 	set @rank := 0, @price := 0;
 
-	select *, greatest(@rank := if(@price = if(isSale, salePrice, marginPrice), @rank, @rank + 1), least(0, @price := if(isSale, salePrice, marginPrice))) as 순위
+	select *, greatest(@rank := if(@price = if(isSale, salePrice, marginPrice), @rank, @rank + 1), least(0, @price := if(isSale, salePrice, marginPrice))) as rank
 	from (select product.code, name, no, price, saleCnt, marginRate, (@salePrice := saleCnt * price) as salePrice,
 		ceiling( @addTax := (@salePrice / 11) ) as addTax,
 		ceiling( @supplyTax := (@salePrice - @addTax) ) as supplyTax,

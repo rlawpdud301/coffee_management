@@ -3,6 +3,7 @@ package coffee_management.ui;
 import java.awt.BorderLayout;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -12,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 import coffee_management.dto.Sale;
+import coffee_management.dto.SaleDetail;
 
 public class RankListPanel extends JPanel {
 	private JTable table;
@@ -110,6 +112,7 @@ public class RankListPanel extends JPanel {
 
 	private Object[] getSaleRow(Sale sale) {
 		// TODO Auto-generated method stub
+
 		return new Object[] {
 				sale
 				/*sale.getNo(), sale.getProduct().getCode(), sale.getProduct().getName(), sale.getSaleCnt(),

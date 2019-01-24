@@ -62,7 +62,7 @@ public class OutputUI extends JFrame {
 		flowLayout.setVgap(20);
 		contentPane.add(pTitle, BorderLayout.NORTH);
 		
-		JLabel lblTitle = new JLabel(isSale ? "판매금액순위" : "마진액순위");
+		JLabel lblTitle = new JLabel(isSale ? "판매금액 순위" : "마진액 순위");
 		pTitle.add(lblTitle);
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitle.setFont(new Font("맑은 고딕", Font.BOLD, 30));

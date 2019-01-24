@@ -4,10 +4,16 @@
 
 	<resultMap type="Sale" id="resultSale">
 		<id column="no" property="no" />
-		<result column="product" property="product.code"/>
+		<result column="code" property="product.code"/>
+		<result column="name" property="product.name"/>
 		<result column="price" property="price"/>
 		<result column="saleCnt" property="saleCnt"/>
 		<result column="marginRate" property="marginRate"/>
+		<result column="salePrice" property="detail.salePrice"/>
+		<result column="addTax" property="detail.addTax"/>
+		<result column="supplyTax" property="detail.supplyTax"/>
+		<result column="marginPrice" property="detail.marginPrice"/>
+		<result column="rank" property="detail.rank"/>
 	</resultMap>
 	
 	<select id="selectSaleByAll" resultMap="resultSale">
