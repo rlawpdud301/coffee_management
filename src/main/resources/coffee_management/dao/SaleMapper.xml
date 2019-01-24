@@ -13,7 +13,7 @@
 		<result column="addTax" property="detail.addTax"/>
 		<result column="supplyTax" property="detail.supplyTax"/>
 		<result column="marginPrice" property="detail.marginPrice"/>
-		<result column="rank" property="detail.rank"/>
+		<result column="rank" property="detail.rank"/> 
 	</resultMap>
 	
 	<select id="selectSaleByAll" resultMap="resultSale">
