@@ -34,12 +34,13 @@ public class ProductMapperImpl implements ProductMapper {
 			return sqlSession.selectOne(namespace + ".selectProductByCode", product);
 		}
 	}
-	
-	private Product getProduct(ResultSet rs) throws SQLException {
+
+	@Override
+	public Product getProduct(ResultSet rs) throws SQLException {
 		String code = rs.getString("code");
 		String name = rs.getString("name");
 		
 		return new Product(code, name);
 	}
-
+	
 }

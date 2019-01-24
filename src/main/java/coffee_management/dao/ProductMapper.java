@@ -1,5 +1,6 @@
 package coffee_management.dao;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,4 +10,6 @@ public interface ProductMapper {
 	List<Product> selectProductByAll() throws SQLException;
 	
 	Product selectProductByCode(Product product) throws SQLException;
+	
+	Product getProduct(ResultSet rs) throws SQLException;
 }

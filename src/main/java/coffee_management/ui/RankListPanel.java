@@ -3,7 +3,6 @@ package coffee_management.ui;
 import java.awt.BorderLayout;
 import java.util.List;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -37,14 +36,14 @@ public class RankListPanel extends JPanel {
 		scrollPane.setViewportView(table);
 		
 		//정렬, 폭에 대한 메서드 만들고 가변배열로 처리한다.
-		setAlignWidth();
+//		setAlignWidth();
 	}
 
 	private void setAlignWidth() {
 		// TODO Auto-generated method stub
-		tableCellAlignment(SwingConstants.CENTER, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+		tableCellAlignment(SwingConstants.CENTER, 0, 1, 2);
 		//가격 => 오른쪽 정렬
-//		tableCellAlignment(SwingConstants.RIGHT, 3, 4, 5, 6, 7, 8, 9);
+		tableCellAlignment(SwingConstants.RIGHT, 3, 4, 5, 6, 7, 8, 9);
 		tableSetWidth(100, 100, 200, 150, 100, 200, 200, 200, 100, 150);
 	}
 
@@ -74,6 +73,7 @@ public class RankListPanel extends JPanel {
 		table.setModel(new DefaultTableModel(
 					getDatas(), getColumnNames()
 				));
+		setAlignWidth();
 	}
 
 	private Object[][] getDatas() {
@@ -84,7 +84,7 @@ public class RankListPanel extends JPanel {
 		for(int i = 0 ; i < list.size() ; i++) {
 			datas[i] = getSaleRow(list.get(i));
 		}
-		datas[list.size()] = getTotal();
+//		datas[list.size()] = getTotal();
 		return datas;
 	}
 
@@ -111,9 +111,10 @@ public class RankListPanel extends JPanel {
 	private Object[] getSaleRow(Sale sale) {
 		// TODO Auto-generated method stub
 		return new Object[] {
-				sale.getNo(), sale.getProduct(), sale.getProduct().getName(), sale.getSaleCnt(),
+				sale
+				/*sale.getNo(), sale.getProduct().getCode(), sale.getProduct().getName(), sale.getSaleCnt(),
 				sale.getDetail().getSupplyTax(), sale.getDetail().getAddTax(), sale.getDetail().getSalePrice(),
-				sale.getMarginRate(), sale.getDetail().getMarginPrice()
+				sale.getMarginRate(), sale.getDetail().getMarginPrice()*/
 		};
 	}
 	

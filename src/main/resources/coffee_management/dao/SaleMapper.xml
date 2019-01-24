@@ -4,7 +4,7 @@
 
 	<resultMap type="Sale" id="resultSale">
 		<id column="no" property="no" />
-		<result column="code" property="product.code"/>
+		<result column="product" property="product.code"/>
 		<result column="price" property="price"/>
 		<result column="saleCnt" property="saleCnt"/>
 		<result column="marginRate" property="marginRate"/>

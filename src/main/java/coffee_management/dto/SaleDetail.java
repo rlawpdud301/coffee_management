@@ -5,6 +5,7 @@ public class SaleDetail {
 	private int addTax;			//부가세액
 	private int salePrice;		//판매금액
 	private int marginPrice;	//마진액
+	private int rank;			//순위
 	
 	public SaleDetail() {
 		// TODO Auto-generated constructor stub
@@ -15,6 +16,14 @@ public class SaleDetail {
 		this.addTax = addTax;
 		this.salePrice = salePrice;
 		this.marginPrice = marginPrice;
+	}
+	
+	public SaleDetail(int supplyTax, int addTax, int salePrice, int marginPrice, int rank) {
+		this.supplyTax = supplyTax;
+		this.addTax = addTax;
+		this.salePrice = salePrice;
+		this.marginPrice = marginPrice;
+		this.rank = rank;
 	}
 
 	public int getSupplyTax() {
@@ -48,11 +57,19 @@ public class SaleDetail {
 	public void setMarginPrice(int marginPrice) {
 		this.marginPrice = marginPrice;
 	}
+	
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
 
 	@Override
 	public String toString() {
-		return String.format("SaleDetail [supplyTax=%s, addTax=%s, salePrice=%s, marginPrice=%s]", supplyTax, addTax,
-				salePrice, marginPrice);
+		return String.format("SaleDetail [supplyTax=%s, addTax=%s, salePrice=%s, marginPrice=%s, rank=%s]", supplyTax,
+				addTax, salePrice, marginPrice, rank);
 	}
 	
 	
