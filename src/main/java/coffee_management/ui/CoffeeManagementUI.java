@@ -52,7 +52,7 @@ public class CoffeeManagementUI extends JFrame implements ActionListener {
 
 	private void initComponents() {
 		setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		setTitle("김보민_판매실적 계산 프로그램");
+		setTitle("김재영");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 350);
 		contentPane = new JPanel();
@@ -201,18 +201,33 @@ public class CoffeeManagementUI extends JFrame implements ActionListener {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "제품이 추가도지않았습니다 입력값을 확인해주세요");
 		}
 	}
 	
 	//텍스트필드에 있는 값 가져와서 Sale에다가 넣기
 	private Sale getSale() {
 		// TODO Auto-generated method stub
-		String code = tfCode.getText().trim();
-		int price = Integer.parseInt(tfPrice.getText().trim());
-		int saleCnt = Integer.parseInt(tfSaleCnt.getText().trim());
-		int marginRate = Integer.parseInt(tfMarginRate.getText().trim());
+		String code="";
+		int price =0;
+		int saleCnt =0;
+		int marginRate =0;
 		
+		try {
+			code = tfCode.getText().trim();
+			price = Integer.parseInt(tfPrice.getText().trim());
+			saleCnt = Integer.parseInt(tfSaleCnt.getText().trim());
+			marginRate = Integer.parseInt(tfMarginRate.getText().trim());
+			if(price<0||saleCnt<0||marginRate<0) {
+				JOptionPane.showMessageDialog(null, "음수가 입력되어있습니다 확인해주세요");
+				return null;
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "형식에 맞지않는 데이터가 입력되어있습니다 확인해주세요");
+			return null;
+		}
 		return new Sale(0, new Product(code), price, saleCnt, marginRate);
+		
 	}
 
 	//텍스트필드 초기화하기
